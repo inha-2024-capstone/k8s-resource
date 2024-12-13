@@ -1,0 +1,48 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: simple-ingress
+  annotations:
+    kubernetes.io/ingress.class: "gce" 
+    networking.gke.io/managed-certificates: managed-cert
+    kubernetes.io/ingress.global-static-ip-name: yoger-ip
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /api
+        pathType: Prefix
+        backend:
+          service:
+            name: gateway-cluster 
+            port:
+              number: 8080
+      - path: /oauth2
+        pathType: Prefix
+        backend:
+          service:
+            name: gateway-cluster 
+            port:
+              number: 8080
+      - path: /callback
+        pathType: Prefix
+        backend:
+          service:
+            name: gateway-cluster 
+            port:
+              number: 8080
+      - path: /login
+        pathType: Prefix
+        backend:
+          service:
+            name: gateway-cluster 
+            port:
+              number: 8080
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: vue-frontend-service
+            port:
+              number: 80     
+        

@@ -1,0 +1,12 @@
+apiVersion: cloud.google.com/v1
+kind: BackendConfig
+metadata:
+  name: demo-backend-config
+spec:
+  healthCheck:
+    checkIntervalSec: 10       # 상태 체크 간격 (초)
+    timeoutSec: 5              # 상태 체크 응답 대기 시간 (초)
+    healthyThreshold: 1        # Healthy 상태로 간주할 성공 횟수
+    unhealthyThreshold: 3      # Unhealthy 상태로 간주할 실패 횟수
+    requestPath: /health       # 상태 체크 경로
+    port: 8080

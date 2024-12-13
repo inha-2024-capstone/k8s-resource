@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: auth-config
+data:
+  ACTIVE_PROFILE: prod
+  JWT_ACCESS_TIME: '10000'
+  JWT_REFRESH_TIME: '10000'
+  DB_DDL_AUTO: none
+  USER_TTL: '10'
+  JWT_TTL: '30'
+  
