@@ -1,0 +1,25 @@
+# custom_values.yaml 예시
+global:
+  istioNamespace: istio-system
+  # GKE 등 환경에 따른 네트워크 설정은 필요 시 수정
+
+components:
+  pilot:
+    enabled: true
+  ingressGateway:
+    enabled: true
+  egressGateway:
+    enabled: false
+
+values:
+  prometheus:
+    enabled: true
+  kiali:
+    enabled: true
+    # Kiali 관련 추가 설정 가능 (auth, dashboard 등)
+  grafana:
+    enabled: true
+    # Grafana 대시보드, admin 비밀번호 등 설정 가능
+
+meshConfig:
+  # meshConfig 설정 필요 시 추가

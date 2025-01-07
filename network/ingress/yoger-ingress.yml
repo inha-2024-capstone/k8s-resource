@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: simple-ingress
+  name: yoger-ingress
   annotations:
     kubernetes.io/ingress.class: "gce" 
     networking.gke.io/managed-certificates: managed-cert
@@ -38,11 +38,13 @@ spec:
             name: gateway-cluster 
             port:
               number: 8080
+      
       - path: /
         pathType: Prefix
         backend:
           service:
             name: vue-frontend-service
             port:
-              number: 80     
+              number: 80
+    
         
