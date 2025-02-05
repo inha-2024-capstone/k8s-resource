@@ -4,5 +4,5 @@ metadata:
   name: managed-cert
 spec:
   domains:
-    - yoger.o-r.kr
-    - www.yoger.o-r.kr
+    - yoger.p-e.kr
+    - www.yoger.p-e.kr

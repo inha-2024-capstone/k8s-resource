@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
       - name: auth-server
-        image: kim521/auth-server:prod-v17
+        image: kim521/auth
+        imagePullPolicy: Always
         resources:
           limits:
             memory: "1024Mi"

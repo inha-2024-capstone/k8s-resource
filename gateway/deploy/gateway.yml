@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: gateway-server
-        image: kim521/gateway-server:prod-v15
+        image: kim521/gateway
         resources:
           limits:
             memory: "1024Mi"
