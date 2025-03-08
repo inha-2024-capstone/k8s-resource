@@ -38,7 +38,38 @@ spec:
             name: gateway-cluster 
             port:
               number: 8080
-      
+      # Swagger
+      - path: /swagger-ui
+        pathType: Prefix
+        backend:
+          service:
+            name: auth-cluster 
+            port:
+              number: 8080
+      - path: /v3
+        pathType: Prefix
+        backend:
+          service:
+            name: auth-cluster 
+            port:
+              number: 8080
+
+      - path: /orders
+        pathType: Prefix
+        backend:
+          service:
+            name: order-cluster 
+            port:
+              number: 8080
+      - path: /products
+        pathType: Prefix
+        backend:
+          service:
+            name: product-cluster 
+            port:
+              number: 8080
+    
+      # Legacy Frontend
       - path: /
         pathType: Prefix
         backend:
@@ -46,5 +77,4 @@ spec:
             name: vue-frontend-service
             port:
               number: 80
-    
         

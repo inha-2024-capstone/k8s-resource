@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: order
-        image: sa20207/yoger_order:event_v3_3
+        image: sa20207/yoger_order:event_v3_5
         imagePullPolicy: Always
         resources:
           limits:
@@ -39,4 +39,6 @@ spec:
             name: db-secret
         - secretRef:
             name: pg-secret
+        - secretRef:
+            name: kafka-secret
         
