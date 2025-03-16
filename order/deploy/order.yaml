@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: order
-        image: sa20207/yoger_order:event_v3_5
+        image: sa20207/yoger_order:event_v3_6
         imagePullPolicy: Always
         resources:
           limits:

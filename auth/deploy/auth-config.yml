@@ -6,7 +6,9 @@ data:
   ACTIVE_PROFILE: prod
   JWT_ACCESS_TIME: '10000'
   JWT_REFRESH_TIME: '10000'
-  DB_DDL_AUTO: none
+  DB_DDL_AUTO: create
   USER_TTL: '10'
   JWT_TTL: '30'
+  USER_IMAGE: https://storage.googleapis.com/yoger/user.png
+  COMPANY_IMAGE: https://storage.googleapis.com/yoger/company.png
   

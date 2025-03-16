@@ -68,6 +68,14 @@ spec:
             name: product-cluster 
             port:
               number: 8080
+
+      - path: /chat
+        pathType: Prefix
+        backend:
+          service:
+            name: chat-cluster 
+            port:
+              number: 8080
     
       # Legacy Frontend
       - path: /

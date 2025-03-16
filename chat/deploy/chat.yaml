@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: auth-server
+  name: chat-server
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: auth-server
+      app: chat-server
   template:
     metadata:
       labels:
-        app: auth-server
+        app: chat-server
     spec:
       containers:
-      - name: auth-server
-        image: kim521/auth
+      - name: chat-server
+        image: kim521/chat
         imagePullPolicy: Always
         resources:
           limits:
@@ -32,12 +32,17 @@ spec:
           failureThreshold: 3
           successThreshold: 1
         envFrom:
-        - configMapRef:
-            name: auth-config
         - secretRef:
             name: db-secret
         - secretRef:
-            name: auth-secret
-        - secretRef:
             name: kafka-secret
+        env:
+          - name: SERVER_URL
+            valueFrom:
+              fieldRef:
+                fieldPath: status.podIP
+          - name: SERVER_PORT
+            value: '8080'
+          - name: DB_DDL_AUTO
+            value: create
       
